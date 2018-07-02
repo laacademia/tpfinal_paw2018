@@ -1,0 +1,95 @@
+.botonera-visualizacion-productos{
+	width: 80%;
+	height: 25px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+}
+.boton{
+	float: left;
+	margin-left: 11px;
+	padding: 5px;
+	background-color: #034b59;
+	border-radius: 3px;
+	color: white;
+	font-weight: bold;
+	font-size: 10pt;
+	box-shadow: 3px 4px 1px #cccddd;
+}
+.boton:hover{
+	cursor: pointer;
+	color: #ff9702;
+}
+.section-lista-productos{
+	//background-color: #ccc;
+}
+.section-lista-productos ul{
+    height: auto;
+    display: inline-block;
+    width: 100%;
+}
+.section-lista-productos ul li{
+	background-color: #eee;
+}
+
+.section-lista-productos figure{
+	margin: 0;
+	height: 130px;
+	max-height: 160px;
+	overflow: hidden;
+	padding-top: 5%;
+}
+.visualizacion-grilla{
+	width: 100%;
+	display: block;
+	//background-color: #eee;
+        border-style: solid;
+        border-width: 0.0625em;
+        margin: 0.125em;
+}
+.producto{
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #888888;
+}
+.visualizacion-listado{
+	width: 100%;
+	display: block;
+	
+}
+.visualizacion-listado .producto{
+	width: 100%;
+	min-height: 80px;
+	margin-bottom: 10px;	
+}
+
+/* Grilla */
+.visualizacion-grilla .producto{
+	width: 23%;
+	float: left;
+	text-align: center;
+	margin-left: 1%;
+	margin-bottom: 1%;
+	border: 1px solid #ccc;
+}
+
+.visualizacion-listado figure img{
+	float: left;
+	margin-left: 2%;
+}
+.visualizacion-listado figcaption{
+	float: left;
+	margin-left: 2%;
+}
+
+.precio-producto{
+	font-weight: bold;
+	font-size: 14pt;
+	color: #04B404;
+}
+
+@media screen and (max-width: 600px) {
+	.visualizacion-grilla .producto{
+		width: 42%;		
+	}
+
+}

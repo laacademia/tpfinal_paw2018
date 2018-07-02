@@ -1,0 +1,193 @@
+@media screen{
+    img{
+        height: 25em;
+        width: 30em;
+    }
+    #anterior{ 
+        height: 18.75em;
+        width: 10%;
+        float: left;
+    }
+    #siguiente{ 
+        height: 18.75em;
+        width:10%;
+        float: right;
+        position: relative;
+    }
+    #art_scrolling{ 
+        float: left;
+        height: 18.75em;
+        width:78%;
+        margin-left: 0.225em;
+    }
+    .flechas{
+        margin-top: 130%;
+    }
+    #flechad, #flechai{
+        width:100%;
+        height:100%;
+        transition: 1s ease;
+    }
+    #carrousel{
+        width: 85%;
+        height: 12.5em;	
+        display: table;
+        margin-left: 16%;
+    }
+    #mayor,#menor{
+        width:30%;
+        height:30%;
+        transition: 1s ease;
+    }
+    #sig,#ant{
+        width: 7em;
+        padding: auto;
+        float: left;	
+    }
+    .item-carrousel{
+        display: none; 
+        width: 195%;
+    }
+    .img-item-carousel{
+        height: 25em;
+        //display: table;
+        width: 30em;
+        //margin: auto;
+        //margin-top:5%;
+    }
+    .item-car{
+        display: inline-table; 
+        height: 25em;
+        width: 25em;
+        float: left;	
+    }
+    .maymen{
+        margin:auto;
+        margin-top: 178%;
+    }
+    #mayor{
+        float: right;
+    }
+    .efecto1 {
+        animation-name: efecto1;
+        animation-duration: 3s;
+    }
+    @-webkit-keyframes efecto1 {
+        from {opacity: 0.1} 
+        to {opacity: 1}
+    }
+    .efecto2 {
+        animation-name: efecto2;
+        animation-duration: 2s;
+        animation-iteration-count: 2;
+    }
+    @-webkit-keyframes efecto2 {
+        from {
+            height: 0%;
+            width: 0em;
+            opacity: 0.1;
+        }
+        to{
+            height: 50%;
+            width: 1.25em;
+            opacity: 0.75;
+        }
+    }
+    .efecto3 {
+        animation-name: efecto3;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+    }
+    @-webkit-keyframes efecto3 {
+        from {
+            border-radius: 0%;
+            border-style: dashed;
+            border-color: blue;
+        }
+        to{
+            border-radius: 50%;
+            border-style: solid;
+            border-color: greenyellow;
+            
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    #flechad, #flechai{
+        width:2em;
+       // height:100%;
+        transition: 1s ease;
+    //    display:none;
+    }
+    #anterior{ 
+        height: 12.75em;
+        width: 10%;
+        float: left;
+    }
+    #siguiente{ 
+        height: 12.75em;
+        width:10%;
+        float: right;
+        position: relative;
+    }
+    .flechas{
+        margin-top: 210%;
+        margin-left:10%
+    }
+
+    .item-carrousel{
+     //   width: 88%;
+     //   float: left;
+        
+    }
+    .txt-item-carousel{
+        display: none;
+    }
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 3s;
+    }
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    .img-item-carousel{
+        height: 50%;
+        width: 20%;
+        display: table;
+        margin: auto;
+        margin-top:12%;
+    }
+    #carrousel{
+        width: 85%;
+        height: 12.5em;	
+        display: table;
+        margin-left: 3em;
+    }
+    .item-car{
+        display: inline-table; 
+        width: 33%;
+        float: left;	
+    }
+    .maymen{
+        margin:auto;
+        margin-top: 12em;
+    }
+    #sig,#ant{
+        width: 4em;
+        padding: auto;
+        float: left;	
+    }
+    img{
+        height: 20em;
+        width: 23em;
+    }
+}    
+
+

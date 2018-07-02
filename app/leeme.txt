@@ -1,0 +1,233 @@
+Estructura
+
+|-conf 				
+|	|-config.php	Archivo de configuracion
+|	|-constant.php	Contiene las constantes que usa el framework (Ojo al modificar!)
+|
+|-core
+|	|-controller
+|	|-helpers	
+|	|-model
+|	|-view
+|
+|-controllers 		Contiene los controladores los que tiene acceso 
+|-views				Contiene las vistas del usuario
+|-models 			Se definen los modelos del usuario
+|-web 				Directorio navegable. El Punto de acceso a la aplicacion es application.php
+|-sql				Contiene los slq de la aplicacion
+|
+|app.conf 			Configuracion para apache
+|instalacion.sh		Instalcion de la aplicacion
+
+
+
+1) 
+ Ejecutar ./instalacion.sh
+
+ 	Configura la ruta del directorio del proyecto en app.conf
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 	
+El funcionamiento es el siguiente
+
+1- Al generarse una peticion, la misma es atrapada por (web/applicacion.php) unico punto de accedo a la app que es una instacia 
+	de core/Applicacion.php
+
+	Por ejemplo 
+		localhost/app/applicacion.php 								//definir un controlador default
+
+2- Se parsea la url que debe indicar el controlador (parametro 'c') y la accion de ese controlador (parametro 'a')
+		Ejemplo 
+			localhost/app/applicacion.php?c=productos&a=listar
+			se hace una peticion para que el controlador 'productos' ejecute la accion 'listar'
+
+3- Para atender la peticion anterior, se debe tener definido el controlador '/controllers/ProductosController.php'
+
+		Ejemplo
+
+			<?php 
+			namespace controllers;
+			use core;
+
+			class ProductosController extends  \core\Controller
+			{					
+				function actionListar($param){
+					return $this->render('test',$params);	//llama a la view inicio	
+				}
+			}
+			?>
+
+	Applicacion crea una instacia del controlador. El controlador ProductosController en su metodo actionListar llama a la vista 'test'.
+
+
+4- En la carpeta 'views' debe existir una subcarpeta con el mismo nombre que el controlador; contendra las vistas disponibles del 	
+	controlador.
+	Siguiendo el ejemplo el archivo de la vista es '/views/productos/test.php'.
+
+		Ejemplo de '/views/productos/test.php'
+			
+			<?php 
+			$echo $params;
+
+			//ME FALTA QUE SE PUEDA SETEAR EL LAYOUT DE LA VISTA Y PODER LEERLO EDL CONTROLADOR
+			$this->setLayout('/layouts/main.php');		//podemos acceder al objeto vista desde aca
+			?>
+			<p>Hola, yo soy una vista</p>
+	
+
+
+
+
+
+
+
+
+-------------------------------
+--------------------------------
+---------------------------------
+Para la resolucion del este TP se utilizo el patrón de diseño MVC(Modelo-Vista-Controlado).
+
+La estructura del proyecto es la siguiente:
+
+|-conf 				
+|	|-config.php	Archivo de configuracion
+|	|-constant.php	Contiene las constantes que usa el framework (Ojo al modificar!)
+|
+|-core
+|	|-controller
+|	|-helpers	
+|	|-model
+|	|-view
+|
+|-controllers 		Contiene los controladores los que tiene acceso 
+|-views				Contiene las vistas del usuario
+|-models 			Se definen los modelos del usuario
+|-web 				Directorio navegable. El Punto de acceso a la aplicacion es application.php
+|-sql				Contiene los slq de la aplicacion
+|
+|app.conf 			Configuracion para apache
+|instalacion.sh		Instalcion de la aplicacion
+
+
+
+Funcionamiento (No se explica el patrón MVC)
+
+* Punto de entrada  
+La aplicación es "single-one-page" y el punto de entrada que es /web/application.php. Este recibe y atiende todas las peticiones.
+Al hacer una peticion se debe indicar el controlador y la accion de ese controlador a través de los parametros c y a respectivamente. 
+Por ejemplo para llamar a la accion inicio del controlador Articulo se debe pasar /applicacion.php?c=articulo&a=inicio.
+
+El nombre de la accion es snake-case y en el controlador se usar camel-case (esto es para que sea mas legible en la URL). 
+Por ejemplo si queremos llamar a la accion "listar productos" de Articulo
+
+	https://miweb/applicacion.php?c=articulo&a=listar_productos
+
+	Para el controlador esta acction es ListarProductos.
+
+* Controlador
+Los controladores se ubican en la carpeta controllers.
+El nombre del controlador tiene el sufijo 'Controller' y a cada accion del controlador se le debe anteponer el prefijo 'action'.
+Se especificarán todas las acciones se necesiten en el controlador.
+Para atender la peticion anterior (/applicacion.php?c=articulo&a=listar_productos) debemos crear el controlador /controllers/ArticuloController.php
+
+		-----------------------------------------------------------------
+		class ArticuloController extends  \core\Controller
+		{	
+			function actionListarProductos(){
+				$articulo = $this->getModel();
+				$listado = $articulo->getAll();						
+				return $this->render('inicio', array('title'=>'Listado de Articulos','listado' => $listado));	//llama a la view inicio
+			}
+
+			function actionOtraAccionMas(){
+				//no hago nada
+			}
+		}
+		-----------------------------------------------------------------
+
+		1)Se trae una instancia del modelo Articulo.
+		2)Usa el metodo getAll() para traer todos los articulos y renderiza la vista 'inicio' pasandole los parametros 'title' y 'listado'.
+
+* Modelo
+Los modelos se ubican en la carpeta models.
+El nombre del modelo debe ser el mismo que el del controlador (sin el sufijo Controller). Por ejemplo para el controlador 'ArticuloController' el modelo es 'Articulo'
+Este nos permite hacer modificaciones sobre la DB.
+Para atender la peticion alcanza con definir el siguiente modelo en /controllers/Articulo.php
+
+		-----------------------------------------------------------------
+		namespace App\models;
+		class Articulo extends \core\Model
+		{
+
+		}
+		-----------------------------------------------------------------
+Toda la logica esta en el padre \core\Model.
+Por defecto se toma el nombre del modelo como nombre de la tabla a no ser que se espefique. Por ejemplo si queremos que la tabla del modelo Articulo sea 'perro' 
+agregamos la propiedad $table al modelo.
+
+		namespace App\models;
+		class Articulo extends \core\Model
+		{
+			protected $table = 'perro';	
+		}
+
+
+* Vistas
+Las vistas se ubican en la carpeta views. En views se debe definir una carpeta con el nombre del controlador. En el ejemplo el controlador llama a la vista 'inicio' por
+lo tanto el archivo es /views/articulo/incio.php. 
+
+		------------------------------------------------------------------
+
+		<h1>$title</h1>
+
+		------------------------------------------------------------------
+		Los parametros que le pasa el controlador cuando llama al metodo render pueden ser usados en la vista. 
+		Se uso solo uno de los dos parametros que le paso el controlador, $title ($listado no).
+
+
+* Layouts
+
+Por defecto las vistas son renderizadas dentro de un layout que esta definido en layouts/main.php. El contenido de las vistas se ubica en $content
+
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="UTF-8">
+			<link rel="stylesheet" type="text/css" href="./css/main.css">
+			<title>Este es el layout principal</title>
+		</head>
+		<body>
+			<header class="bar-container">
+				<!-- <h1>Layout Principal</h1> -->
+				<nav id="main-menu">
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>				
+					</ul>
+				</nav>
+			</header>
+			<section class="errores"><?php core\Notification::instancia()->print(); ?></section>
+			<section id="main-container">		
+				<div class="bar-container title-content"><?=$title?></div>		
+				<div class="view-container"><?=$content?></div>					
+			</section>
+			<footer></footer>
+		</body>
+		</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

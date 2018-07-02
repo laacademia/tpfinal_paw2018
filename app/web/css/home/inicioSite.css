@@ -1,0 +1,70 @@
+@media screen{
+    .img-inicio{
+        width:35em;
+        height:17em;
+        top:auto;
+        margin: 0 auto;
+    }
+    #scrolling{ 
+        //border-style: solid;
+        //border-width: 0.0625em;
+        height: 18.75em;
+        width:100%;
+        display: block;
+    }
+    #art_scrolling{ 
+        float: left;
+        height: 18.75em;
+        width:100%;
+        //margin-left: auto;
+        //margin-right: auto;
+    }
+    .inicio{
+        display:none;
+       // margin:auto;
+        margin-top: 1%;
+        width:35em;
+       margin-left: auto;
+       margin-right: auto;
+    }
+    .efecto {
+        animation-name: efecto;
+        animation-duration: 3s;
+    }
+    @-webkit-keyframes efecto {
+        from {opacity: 0.1} 
+        to {opacity: 1}
+    }
+}
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 12px;
+    }
+    .img-inicio{
+        width:12em;
+        height:16em;
+        top:auto;
+    }
+    #scrolling{ 
+        border-style: solid;
+        border-width: 0.0625em;
+        height: 17em;
+        width:100%;
+        margin: 0.125em;
+        display: block;
+    }
+    .inicio{
+        display:none;
+        margin:auto;
+        margin-top: 1%;
+        margin-left: 35%;
+        margin-right: 50%;
+    }
+    .item-carrousel{
+        width: 88%;
+        float: left;
+        
+    }
+}    
+
+

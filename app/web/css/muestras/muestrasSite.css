@@ -1,0 +1,22 @@
+@media screen{
+    #lista-youtube{
+        margin-left: 20%;
+    }
+    .iframe-youtube{
+        width:45em;
+        height:25em;
+    }
+    
+}
+@media screen and (max-width: 600px) {
+    
+    #lista-youtube{
+        margin-left: 3em;
+    }
+    .iframe-youtube{
+        width:31em;
+        height:20em;
+    }
+}    
+
+
