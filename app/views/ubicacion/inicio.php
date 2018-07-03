@@ -1,5 +1,6 @@
        
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">    
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <div id="ubicaciones-container"></div>
     <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaH-CtIiEJgyqaNf_5Z31yI8nygDdUzXI&libraries=places&callback=initMap" async defer></script>
     <script>
@@ -17,6 +18,18 @@
             dataType: 'json',
             url: "./?c=ubicacion&a=ubicaciones"
         }).done(function(data){
+          console.log(data);
+          
+          
+          // for(id_ubicacion in data){
+          //   var eItemUbicacion = $('<li></li>').attr('id_ubicacion',data[id_ubicacion].id);
+          //   eItemUbicacion.html(data[id_ubicacion].descripcion);
+          //   eItemUbicacion.on('click',function(){
+
+          //   });
+          //   eContainerUbicaciones.append(eItemUbicacion);
+          // }
+
           posicion.lat = parseFloat(data[0].latitud);
           posicion.lng = parseFloat(data[0].longitud);
 
@@ -28,6 +41,10 @@
             zoomControl: false,
             streetViewControl: false
           });
+
+          //agrego una lista con las ubicaciones para poder elegir y que se desplace el marcador
+          var eContainerUbicaciones = $('#ubicaciones-container');
+          var eListaUbicaciones = $('<ul></ul>').attr('id','lista_ubicaciones');
 
           for (var i = 0; i < data.length; i++) {
             marker = new google.maps.Marker({
@@ -45,7 +62,25 @@
             map.panTo(posicion);
             map.setZoom(15);
             marker.setPosition(posicion);
-            marker.setVisible(true);  
+            marker.setVisible(true);
+
+            var eItemUbicacion = $('<li></li>');
+            eItemUbicacion.attr('id_ubicacion',data[i].id);
+            eItemUbicacion.attr('latitud',data[i].latitud);
+            eItemUbicacion.attr('longitud',data[i].longitud);
+
+            eItemUbicacion.html(data[i].descripcion);
+            eItemUbicacion.on('click',function(){            
+              var posicion = {};
+              $('.ubicacion_seleccionada').removeClass('ubicacion_seleccionada'); //le saco la seleccion a la ubicacion anterior
+              $(this).addClass('ubicacion_seleccionada');                         //le agrego la seleccion a la actual
+              posicion.lat = parseFloat($(this).attr('latitud'));
+              posicion.lng = parseFloat($(this).attr('longitud'));
+              map.panTo(posicion);
+              map.setZoom(15);
+            });
+            eContainerUbicaciones.append(eItemUbicacion);
+
           };
           
         });
@@ -110,7 +145,25 @@
     position: fixed;
     z-index: 2;
   }
-
+  #ubicaciones-container{
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  #ubicaciones-container li{
+    float: left;
+    padding: 20px;
+    text-decoration:none;
+    list-style: none;
+    cursor: pointer;    
+  }
+  #ubicaciones-container li:hover{
+    /*border-bottom: 2px solid #000;*/
+  }
+  .ubicacion_seleccionada{
+    color: #FE642E;
+    border-bottom: 2px solid #000;
+  }
 
   @media only screen and (max-width: 600px) {
       #locationField {
