@@ -2,6 +2,7 @@
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <div id="ubicaciones-container"></div>
     <div id="map"></div>
+    <?php include('descripcion_ubicacion.php'); ?>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaH-CtIiEJgyqaNf_5Z31yI8nygDdUzXI&libraries=places&callback=initMap" async defer></script>
     <script>
     
@@ -39,7 +40,7 @@
             mapTypeControl: false,
             panControl: false,
             zoomControl: false,
-            streetViewControl: false
+            streetViewControl: true
           });
 
           //agrego una lista con las ubicaciones para poder elegir y que se desplace el marcador
@@ -64,12 +65,15 @@
             marker.setPosition(posicion);
             marker.setVisible(true);
 
-            var eItemUbicacion = $('<li></li>');
+            var eItemUbicacion = $('<li></li>').addClass('item-ubicacion');
             eItemUbicacion.attr('id_ubicacion',data[i].id);
             eItemUbicacion.attr('latitud',data[i].latitud);
             eItemUbicacion.attr('longitud',data[i].longitud);
+            eItemUbicacion.attr('index',i); //ver de pasarle esto solo!!!
 
             eItemUbicacion.html(data[i].descripcion);
+            cargarInfoUbicacion(data[0]);         //cargo la info de la primera ubicacion            
+            $('.item-ubicacion').first().addClass('ubicacion_seleccionada');
             eItemUbicacion.on('click',function(){            
               var posicion = {};
               $('.ubicacion_seleccionada').removeClass('ubicacion_seleccionada'); //le saco la seleccion a la ubicacion anterior
@@ -78,6 +82,9 @@
               posicion.lng = parseFloat($(this).attr('longitud'));
               map.panTo(posicion);
               map.setZoom(15);
+
+              var index = $(this).attr('index');
+              cargarInfoUbicacion(data[index]);
             });
             eContainerUbicaciones.append(eItemUbicacion);
 
@@ -92,6 +99,14 @@
             marker.setAnimation(google.maps.Animation.BOUNCE);
           }
         }
+        function cargarInfoUbicacion(ubicacion){          
+          $('#titulo').html(ubicacion.titulo);
+          $('#subtitulo').html(ubicacion.subtitulo);
+          $('#descripcion_texto').html(ubicacion.descripcion_texto);
+          $('#horario').html(ubicacion.horario);
+          $('#direccion').html(ubicacion.dias_abierto);
+          $('#telefono').html('<strong>Telefono:</strong>'+ubicacion.telefono);
+        }  
       }
       
     </script>
@@ -161,7 +176,7 @@
     /*border-bottom: 2px solid #000;*/
   }
   .ubicacion_seleccionada{
-    color: #FE642E;
+    color: #0080FF;
     border-bottom: 2px solid #000;
   }
 
