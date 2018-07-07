@@ -1,4 +1,4 @@
-<form id="form"> 
+<form id="form" method="post" action="./?c=mensaje&a=enviarmensaje"> 
     <!--Nombre-->
     <label name="nombre">Nombre:</label>
     <input id="nombre" class="element-form" type="text" name="nombre" placeholder="Nombre">
