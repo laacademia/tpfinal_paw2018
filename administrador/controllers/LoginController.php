@@ -28,6 +28,7 @@ class LoginController extends  \core\Controller
 	function actionLogout(){		
 		unset ($_SESSION['username']);
 		unset ($_SESSION['loggedin']);
+                $_SESSION = [''];
 		session_destroy();
 		return $this->render('inicio',array('title'=>'Login'));
 	}
