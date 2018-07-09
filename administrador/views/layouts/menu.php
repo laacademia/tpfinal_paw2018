@@ -4,4 +4,4 @@
 <li><a href="./?c=ubicacion&a=inicio">Ubicaciones</a></li>
 <li><a href="./?c=contacto&a=inicio">Contacto</a></li>				
 <li><a href="./?c=noticia&a=inicio">Noticias</a></li>
-<li><a href="./?c=test&a=inicio">test</a></li>
+<li><a href="./?c=usuario&a=inicio">Usuarios</a></li>
