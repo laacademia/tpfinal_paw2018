@@ -11,7 +11,7 @@
 @media screen and (max-width: 600px) {
     
     #lista-youtube{
-        margin-left: 3em;
+        margin-left: 0em;
     }
     .iframe-youtube{
         width:31em;

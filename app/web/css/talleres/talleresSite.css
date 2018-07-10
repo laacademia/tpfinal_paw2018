@@ -168,7 +168,7 @@
         width: 85%;
         height: 12.5em;	
         display: table;
-        margin-left: 3em;
+        margin-left: 2em;
     }
     .item-car{
         display: inline-table; 
@@ -180,13 +180,13 @@
         margin-top: 12em;
     }
     #sig,#ant{
-        width: 4em;
+        width: 3em;
         padding: auto;
         float: left;	
     }
     img{
         height: 20em;
-        width: 23em;
+        width: 20em;
     }
 }    
 
