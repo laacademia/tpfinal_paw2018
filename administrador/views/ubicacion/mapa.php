@@ -24,16 +24,23 @@
         var posicion = {};
         var latitud = $('#latitud').val();
         var longitud = $('#longitud').val();
-        if( (longitud!==null) && (latitud!==null)){            
+        console.log(latitud);
+        console.log(longitud);
+        if( (longitud!==null && longitud!=="") && (latitud!==null && latitud!=="")){ 
           posicion.lat = parseFloat(latitud);
           posicion.lng = parseFloat(longitud);          
         }else{
           posicion = {lat: -34.6, lng: -58.38};
         }
-
+        console.log(posicion);
         var descripcion = $('#descripcion').val();
           console.log(descripcion);
           var letra_marcador = $('#letra_marcador').val();
+          
+          if(letra_marcador===null || letra_marcador===""){ letra_marcador = 'Z';}
+          if(descripcion===null || descripcion==="descripcion"){ descripcion = 'Descripcion';}
+          console.log(descripcion);
+          console.log(letra_marcador);
 
           //si esta cargada la longitud y latitud agrego el marcador
           marker = new google.maps.Marker({
