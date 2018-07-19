@@ -1,5 +1,14 @@
 # tpfinal_paw2018
 
+/***************************** INSTALACION ******************************/
+
+Se crearon dos proyectos por separado (App y Administrador)que se conectan a la misma base de datos. En ambos casos se debe configurar el archivo de configuracion conf/config.php y ejecutar el archivo instalacion.sh.
+El dump de la base se encuentra en sql/mysql.sql
+
+
+
+
+
 Para la resolucion de este TP se utilizo el patrón de diseño MVC(Modelo-Vista-Controlador).
 La estructura del proyecto es la siguiente:
 
