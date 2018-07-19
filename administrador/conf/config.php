@@ -18,7 +18,7 @@ return array(
   //         'dbname'=>'site',
   //         'host' => 'localhost',
   //         'user' => 'root',
-  //         'password'=>'80055543',
+  //         'password'=>'',
   //         'port'=>''),
   //   'default_controller'=> array('controller'=>'home', 
   //                               'action'=>'inicio'),

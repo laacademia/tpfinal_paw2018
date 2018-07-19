@@ -54,7 +54,7 @@ class PersistorPostgresql implements \core\ContractPersistorObject
 		}
 		$str_values = rtrim($str_values,",");
 		$db = $this->openConnection();
-		echo "UPDATE $table SET $str_values $where";
+		//echo "UPDATE $table SET $str_values $where";
         //$query = $db->prepare("UPDATE $table SET $str_values $where");
         pg_query($db, "UPDATE $table SET $str_values $where") or die("Cannot execute query: $query\n");
         //$query->execute();

@@ -27,3 +27,4 @@ if (!defined('PATH_ABM_PLANTILLA_INICIO')) define('PATH_ABM_PLANTILLA_INICIO' , 
 if (!defined('PATH_ABM_PLANTILLA_ALTA')) define('PATH_ABM_PLANTILLA_ALTA' , 'bin/comandos/abm/archivos_genericos/alta_generico.php');
 if (!defined('PATH_ABM_PLANTILLA_EDICION')) define('PATH_ABM_PLANTILLA_EDICION' , 'bin/comandos/abm/archivos_genericos/edicion_generico.php');
 if (!defined('PATH_ABM_PLANTILLA_ITEM_MENU')) define('PATH_ABM_PLANTILLA_ITEM_MENU' , 'bin/comandos/abm/archivos_genericos/item_menu_generico.php');
+if (!defined('PATH_PLANTILLA_INICIO_SIMPLE')) define('PATH_PLANTILLA_INICIO_SIMPLE' , 'bin/comandos/abm/archivos_genericos/inicio_generico_simple.php');

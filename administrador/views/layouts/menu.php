@@ -5,3 +5,4 @@
 <li><a href="./?c=contacto&a=inicio">Contacto</a></li>				
 <li><a href="./?c=noticia&a=inicio">Noticias</a></li>
 <li><a href="./?c=usuario&a=inicio">Usuarios</a></li>
+<li><a href="./?c=comentario&a=inicio">comentario</a></li>
