@@ -12,19 +12,14 @@
 		<span class="button-main-menu">||||</span>
 		<nav id="main-menu">			
 			<ul>
-				<li><a href="./?c=home&a=inicio">Inicio</a></li>				
-				<li><a href="./?c=disciplinas&a=inicio">Disciplinas</a></li>
-				<li><a href="./?c=talleres&a=inicio">Talleres</a></li>
-				<li><a href="./?c=muestras&a=inicio">Muestras</a></li>				
-				<li><a href="./?c=quienesSomos&a=inicio">¿Quienes somos?</a></li>	
-                                <li><a href="./?c=ubicacion&a=inicio">Nuestra Ubicacion</a></li>
-				<li><a href="./?c=mensaje&a=inicio">Contacto</a></li>				
+				<?php include('menu.php'); ?>
 			</ul>
 		</nav>
 	</header>
 	<section class="errores"><?php core\Notification::instancia()->print(); ?></section>
-	<section id="main-container">		
-		<div class="bar-container title-content"><?=$title?></div>		
+	<section id="main-container">
+		<div id="imagen-loader" style="display: none">CARGANDO........</div>		
+		<div id="title-view-container" class="bar-container title-content"><?=$title?></div>		
 		<div class="view-container"><?=$content?></div>					
 	</section>
 	<footer class="footer-site">

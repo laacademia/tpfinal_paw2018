@@ -4,6 +4,8 @@ namespace App\controllers;
 
 class QuienesSomosController extends  \core\Controller
 {		
+	public $useLayout = false;
+	
 	function actionInicio(){
 		$model = $this->getModel('QuienesSomos');		
 		$datos = $model->getAll();

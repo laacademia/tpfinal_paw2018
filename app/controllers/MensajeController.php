@@ -4,7 +4,9 @@ namespace App\controllers;
 include($_SERVER['PATH_BASE'] . '/3ros/PHPMailer/_lib/class.phpmailer.php');
 //echo "salslaks ".$_SERVER['PATH_BASE'] . '/3ros/PHPMailer/_lib/class.phpmailer.php';
 class MensajeController extends  \core\Controller
-{		
+{	
+      public $useLayout = false;
+      	
 	function actionInicio(){
 		return $this->render('inicio',array('title'=>'Formulario de Contacto'));		
 	}

@@ -4,6 +4,8 @@ namespace App\controllers;
 
 class TalleresController extends  \core\Controller
 {		
+	public $useLayout = false;
+	
 	function actionInicio(){
 		$model = $this->getModel('Talleres');		
 		$datos = $model->find(" id_categoria = 3 and activo");

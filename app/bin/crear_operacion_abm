@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+//echo "\n".$_SERVER['PATH_BASE']."\n";
+error_reporting(0);
+
+if (! isset($_SERVER['PATH_BASE'])) {	
+	$_SERVER['PATH_BASE'] = realpath(__DIR__.'/../');
+}
+$dir_bin = $_SERVER['PATH_BASE'] . '/bin/comandos/abm';
+array_shift($argv);
+$contexto = $argv[0];
+//echo "$contexto\n";
+//creo el controlador
+exec("cd $dir_bin; ./comando_crear_controlador.php $contexto");
+
+//crea el modelo
+exec("cd $dir_bin; ./comando_crear_modelo.php $contexto");
+
+//crea el directorio de la vista
+echo "Desea agregar la operacion al menu? (s/n)\n"; //no imprime con exec
+exec("cd $dir_bin; ./comando_crear_vista.php $contexto");
+

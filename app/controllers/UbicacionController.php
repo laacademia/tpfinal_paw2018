@@ -4,6 +4,7 @@ namespace App\controllers;
 
 class UbicacionController extends  \core\Controller
 {	
+	public $useLayout = false;
 	//Arma la pagina de inicio	
 	function actionInicio(){		
 		return $this->render('inicio',array('title'=>'Ubicacion del Local'));
