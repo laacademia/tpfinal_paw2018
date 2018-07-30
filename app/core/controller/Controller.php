@@ -105,6 +105,9 @@ class Controller
 		}else
 			die("Error. El modelo $model no existe en $model_path");						
 	}
+	function es_peticion_ajax(){
+		return (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
+	}
 }
 
 ?>
