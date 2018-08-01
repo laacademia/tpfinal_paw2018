@@ -7,7 +7,7 @@ class DisciplinasController extends  \core\Controller
 	public $useLayout = false;
 
 	function actionInicio(){
-		for ($i=0; $i < 999999999; $i++) { 
+		for ($i=0; $i < 99999999; $i++) { 
 			
 		}
 		$model = $this->getModel('Disciplinas');		

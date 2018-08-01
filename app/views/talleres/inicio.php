@@ -2,15 +2,7 @@
   @import url("./css/talleres/talleresSite.css");
 </style>
 <script src="./js/talleres/talleresSite.js" type="text/javascript"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-      talleresgaleria.mostrar("carrousel");
-    });
-    
-</script>
-
-
-<section id="carrousel">
+<section id="carrousel-1">
         <article id="ant">
             <figure class="maymen">
                 <img id="menor" src="./img/talleres/arrowi.png" onclick="talleresgaleria.anteriorC()" alt="menor">
@@ -57,3 +49,6 @@
             </figure>
         </article>
     </section>
+<script>
+      talleresgaleria.mostrar("carrousel-1");
+</script>

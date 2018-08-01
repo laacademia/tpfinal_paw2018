@@ -3,8 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
+        
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="./js/animacion.js"></script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            animacion.iniciar("imagen-loader");
+          });
+
+        </script>
+
 	<title>TP FINAL</title>
 </head>
 <body>
@@ -17,8 +26,20 @@
 		</nav>
 	</header>
 	<section class="errores"><?php core\Notification::instancia()->print(); ?></section>
-	<section id="main-container">
-		<div id="imagen-loader" style="display: none">CARGANDO........</div>		
+	<section id="imagen-loader" class = "loader">
+                    <section class='circulo'>
+                        <div id='grado0' class="opacidad0 color1"> </div>
+                        <div id='grado45' class="opacidad45 color1"> </div>
+                        <div id='grado90' class="opacidad90 color1"> </div>
+                        <div id='grado135' class="opacidad135 color1"> </div>
+                        <div id='grado180' class="opacidad180 color1"> </div>
+                        <div id='grado225' class="opacidad225 color1"> </div>
+                        <div id='grado270' class="opacidad270 color1"> </div>
+                        <div id='grado315' class="opacidad315 color1"> </div>
+                    </section>
+                </section>
+        <section id="main-container">
+				
 		<div id="title-view-container" class="bar-container title-content"><?=$title?></div>		
 		<div class="view-container"><?=$content?></div>					
 	</section>
@@ -48,4 +69,3 @@
         </footer>
 </body>
 </html>
-
