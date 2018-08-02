@@ -13,12 +13,16 @@ include($_SERVER['PATH_BASE'] . '/core/helpers/html/Link.php');
         <th></th>
     </tr>   
     
+    <?php 
+    $no_mostrar = array('titulo','subtitulo','descripcion_texto','horario','direccion','telefono');;
+    ?>
 
     <?php foreach ($listado as $id_fila => $fila) {
         echo "<tr>";
 
         foreach ($fila as $key => $value) {
-            echo "  <td>$value</td>";
+            if(!in_array($key, $no_mostrar))
+                echo "  <td>$value</td>";
         }
         $imagen = array('nombre'=>'botones/edit.png', 'attr' => array('alt'=>'editar','style'=>'width:30px;'));
         echo '  <td>'.Link::html2("./?c=ubicacion&a=modificacion&id={$fila['id']}",'editar',null,$imagen).'</td>';
