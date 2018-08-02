@@ -1,4 +1,4 @@
-<section class="errores"><?php core\Notification::instancia()->print(); ?></section>
+<section class="errores"><?php core\Notification::instancia()->imprimir(); ?></section>
 
 <form id="form" class="form-login" method="post" action="./?c=login&a=login"> 
     <!--Usuario-->
