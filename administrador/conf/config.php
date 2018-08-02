@@ -1,7 +1,7 @@
 <?php
 return array(
   'db'=>array('engine'=>'mysql',
-        'dbname'=>'site',
+        'dbname'=>'final_paw_clau',
         'host' => 'localhost',
         'user' => 'root',
         'password'=>'80055543',

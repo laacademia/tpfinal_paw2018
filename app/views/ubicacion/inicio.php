@@ -46,6 +46,7 @@
           //agrego una lista con las ubicaciones para poder elegir y que se desplace el marcador
           var eContainerUbicaciones = $('#ubicaciones-container');
           var eListaUbicaciones = $('<ul></ul>').attr('id','lista_ubicaciones');
+          $('#ubicaciones-container').html('');
 
           for (var i = 0; i < data.length; i++) {
             marker = new google.maps.Marker({

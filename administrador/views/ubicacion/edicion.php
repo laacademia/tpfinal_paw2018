@@ -28,7 +28,7 @@
     <input id="horario" class="element-form" type="text" name="horario" placeholder="Horario" value="<?=$ubicacion->horario?>">
     <!-- direccion -->
     <label name="direccion">Direccion:</label>
-    <input id="direccion" class="element-form" type="text" name="direccion" placeholder="Dias Abierto" value="<?=$ubicacion->direccion?>">
+    <input id="direccion" class="element-form" type="text" name="direccion" placeholder="Direccion" value="<?=$ubicacion->direccion?>">
     <!-- telefono -->
     <label name="telefono">Telefono:</label>
     <input id="telefono" class="element-form" type="text" name="telefono" placeholder="Telefono" value="<?=$ubicacion->telefono?>">
