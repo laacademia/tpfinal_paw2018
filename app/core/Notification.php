@@ -34,7 +34,7 @@ class Notification
 		$this->list = array();
 	}
 
-	function print($level=null,$clear=true){
+	function imprimir($level=null,$clear=true){
 		echo '<section>';
 		foreach ($this->list as $key => $msj) {
 			echo '<p>' . $msj['level'] . '. '. $msj['msj'] .'</p>';

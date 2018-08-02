@@ -25,7 +25,7 @@
 			</ul>
 		</nav>
 	</header>
-	<section class="errores"><?php core\Notification::instancia()->print(); ?></section>
+	<section class="errores"><?php core\Notification::instancia()->imprimir(); ?></section>
 	<section id="imagen-loader" class = "loader">
                     <section class='circulo'>
                         <div id='grado0' class="opacidad0 color1"> </div>

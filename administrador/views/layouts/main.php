@@ -17,7 +17,7 @@
 		</nav>
 		<div class="cerrar-sesion-container"><a href="./?c=login&a=logout"><?php echo $_SESSION['username']; ?><img src="./img/botones/logout.jpeg" width="40px"></a></div>
 	</header>
-	<section class="errores"><?php core\Notification::instancia()->print(); ?></section>
+	<section class="errores"><?php core\Notification::instancia()->imprimir(); ?></section>
 	<section id="main-container">		
 		<div class="bar-container title-content"><?=$title?></div>		
 		<div class="view-container"><?=$content?></div>					

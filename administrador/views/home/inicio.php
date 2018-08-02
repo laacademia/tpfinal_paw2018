@@ -143,7 +143,7 @@ Por defecto las vistas son renderizadas dentro de un layout que esta definido en
 					</ul>
 				</nav>
 			</header>
-			<section class="errores"><?php core\Notification::instancia()->print(); ?></section>
+			<section class="errores"><?php core\Notification::instancia()->imprimir(); ?></section>
 			<section id="main-container">		
 				<div class="bar-container title-content">Aca se reemplaza el titulo</div>		
 				<div class="view-container">Aca se reemplaza el contenido de la vista</div>					
