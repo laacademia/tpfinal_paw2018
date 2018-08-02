@@ -19,7 +19,7 @@ animacion = {
         
         var elementos = document.getElementById('scrolling');
         if (elementos !== null){
-            console.log(elementos);
+            //console.log(elementos);
         }else{
             document.getElementById('imagen-loader').style.display = "block";
         }

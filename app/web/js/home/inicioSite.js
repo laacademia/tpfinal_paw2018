@@ -17,16 +17,21 @@ inicioSite = {
         var i;
         //alert(n);
         var carrousel = document.getElementsByClassName("inicio");
-        if (n > carrousel.length) {
-            inicioSite.posicionSlide = 1;
+        //console.log(carrousel.length, "largo carrousel");
+        if (carrousel.length !== 0){
+            //console.log("entra");
+            if (n > carrousel.length) {
+                inicioSite.posicionSlide = 1;
+            }
+            if (n < 1) {
+                inicioSite.posicionSlide = carrousel.length;
+            }
+            for (i = 0; i < carrousel.length; i++) {
+                carrousel[i].style.display = "none";
+            }
+            carrousel[inicioSite.posicionSlide-1].style.display = "block";
         }
-        if (n < 1) {
-            inicioSite.posicionSlide = carrousel.length;
-        }
-        for (i = 0; i < carrousel.length; i++) {
-            carrousel[i].style.display = "none";
-        }
-        carrousel[inicioSite.posicionSlide-1].style.display = "block";
+        
     },
     siguiente: function () {
         inicioSite.moverScrollingI(inicioSite.posicionSlide += 1);
