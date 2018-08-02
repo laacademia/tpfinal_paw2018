@@ -27,9 +27,9 @@ include($_SERVER['PATH_BASE'] . '/core/helpers/html/Link.php');
 		echo "</tr>";
 	} ?>
 </table>
-<article id="botonera">
+<!--<article id="botonera">
             <a href="./?c=contacto&a=alta"><p>NUEVO<img src="./img/botones/agregar.png"></p></a>
-        </article>
+        </article> -->
 <style type="text/css">
 	table{
 		border-collapse: collapse;

@@ -9,5 +9,5 @@ require_once($_SERVER['PATH_BASE'] . DIRECTORY_SEPARATOR . PATH_CORE_MODEL);
 */
 class Mensaje extends \core\Model
 {
-    protected $table = 'noticia';
+    protected $table = 'mensajes';
 }

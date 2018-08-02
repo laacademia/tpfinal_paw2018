@@ -29,7 +29,7 @@ class PersistorMysql implements \core\ContractPersistorObject
 		$values = implode(',',array_values($values));
 		$db = $this->openConnection();		
         $query = $db->prepare("INSERT INTO $table($keys) VALUES ($values)");
-        echo "INSERT INTO $table($keys) VALUES ($values)";
+        //echo "INSERT INTO $table($keys) VALUES ($values)";
         $query->execute();
         $this->closeConnection();
 	}
