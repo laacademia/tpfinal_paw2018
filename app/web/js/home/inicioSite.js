@@ -10,10 +10,10 @@ inicioSite = {
     iniciar: function (contenedor) {
         setInterval(inicioSite.siguiente,2500);
     },
-    mostrar: function (contenedor){
-        inicioSite.siguienteC();
-    },
-    moverScrolling: function (n){
+    //mostrar: function (contenedor){
+    //    inicioSite.siguienteC();
+   // },
+    moverScrollingI: function (n){
         var i;
         //alert(n);
         var carrousel = document.getElementsByClassName("inicio");
@@ -29,7 +29,7 @@ inicioSite = {
         carrousel[inicioSite.posicionSlide-1].style.display = "block";
     },
     siguiente: function () {
-        inicioSite.moverScrolling(inicioSite.posicionSlide += 1);
+        inicioSite.moverScrollingI(inicioSite.posicionSlide += 1);
     },
     carrousel: function (n){
         var i;
