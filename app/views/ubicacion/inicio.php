@@ -37,9 +37,9 @@
           map = new google.maps.Map(document.getElementById('map'), {
             zoom: zoom,
             center: posicion,
-            mapTypeControl: false,
+            mapTypeControl: true,
             panControl: false,
-            zoomControl: false,
+            zoomControl: true,
             streetViewControl: true
           });
 
@@ -61,10 +61,12 @@
 
             posicion.lat = parseFloat(data[i].latitud);
             posicion.lng = parseFloat(data[i].longitud);
-            map.panTo(posicion);
+            if(i===0){
+              map.panTo(posicion);              
+            }
             map.setZoom(15);
             marker.setPosition(posicion);
-            marker.setVisible(true);
+            marker.setVisible(true);  
 
             var eItemUbicacion = $('<li></li>').addClass('item-ubicacion');
             eItemUbicacion.attr('id_ubicacion',data[i].id);

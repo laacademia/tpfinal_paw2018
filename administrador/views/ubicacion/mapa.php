@@ -15,10 +15,10 @@
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: zoom,
           center: posicion,
-          mapTypeControl: false,
+          mapTypeControl: true,
           panControl: false,
-          zoomControl: false,
-          streetViewControl: false
+          zoomControl: true,
+          streetViewControl: true
         });
 
         var posicion = {};
