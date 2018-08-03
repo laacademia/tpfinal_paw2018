@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-08-2018 a las 11:33:29
+-- Tiempo de generación: 03-08-2018 a las 14:18:51
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 7.1.9
 
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `mensajes` (
   `fecha_mensaje` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `pk_mensajes` (`id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `mensajes`
@@ -117,7 +117,10 @@ INSERT INTO `mensajes` (`id`, `nombre`, `apellido`, `mail`, `mensaje`, `fecha_me
 (5, 'sdsdsd', 'aaaaaaaaa', 'asas@kdslkds', 'aaaaaaaaaaaaaaaaaaaaa', '2018-08-01 22:26:48'),
 (6, 'dsdsd', 'aaaaaaaaa', 'hhhhh@dskdlskd', 'dsdsdsd', '2018-08-01 22:43:33'),
 (7, 'xxxxx', 'oooooo', 'jakAK@KLDSLKxx', 'sasasas', '2018-08-01 22:46:38'),
-(8, 'andaaaaaa', 'creo ', 'quesi@capaz.anda.com', 'salsklakslaks', '2018-08-01 22:50:10');
+(8, 'andaaaaaa', 'creo ', 'quesi@capaz.anda.com', 'salsklakslaks', '2018-08-01 22:50:10'),
+(9, 'ddddddddddddd', 'qqqqqqqqqqqqq', 'dsdsd@dkslkdlsyyyy', 'yyyyyyyyyyyyy', '2018-08-02 18:28:55'),
+(10, 'clauuuuuu', 'reinauuuuuu', 'clau@reinaudi.com', 'klak klaksslÃ±l lkaslkas', '2018-08-02 18:31:43'),
+(11, 'clau', 'prueba', 'lsasla@dsldÃ±s.com', 'sllsls lÃ±sla lsÃ±als', '2018-08-02 19:35:36');
 
 -- --------------------------------------------------------
 
@@ -197,16 +200,23 @@ CREATE TABLE IF NOT EXISTS `ubicacion` (
   `descripcion` varchar(500) COLLATE latin1_spanish_ci NOT NULL,
   `latitud` float NOT NULL,
   `longitud` float NOT NULL,
+  `titulo` varchar(60) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `subtitulo` varchar(120) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `descripcion_texto` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `horario` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `direccion` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `telefono` varchar(60) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `pk_ubicacion` (`id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `ubicacion`
 --
 
-INSERT INTO `ubicacion` (`id`, `descripcion`, `latitud`, `longitud`) VALUES
-(1, 'sucursal 2', -34.5703, -59.105);
+INSERT INTO `ubicacion` (`id`, `descripcion`, `latitud`, `longitud`, `titulo`, `subtitulo`, `descripcion_texto`, `horario`, `direccion`, `telefono`) VALUES
+(1, 'sucursal 2', -34.5703, -59.105, 'Sucursal 2', 'Sucu 2', 'La segunda sucursal', '8:00 a 20:00', 'lunes a viernes', '8978 5552'),
+(2, 'casa central', -34.6012, -58.3802, 'Casa central principal', 'principal', 'sasas', '8:00 a 21:00', 'lunes a sabados', '2323 5878541');
 
 -- --------------------------------------------------------
 
