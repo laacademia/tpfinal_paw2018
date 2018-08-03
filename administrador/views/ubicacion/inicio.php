@@ -1,10 +1,13 @@
 <?php 
 include($_SERVER['PATH_BASE'] . '/core/helpers/html/Link.php');
 ?>
+<style type="text/css">
+  @import url("./css/ubicacion/ubicacionAdmin.css");
+</style>
 
 <table>
     <tr>
-        <th>Id</th>
+        <th id="id">Id</th>
         <th>Descripción</th>
         <th>Latitud</th>
         <th>Longitud</th>
@@ -22,7 +25,7 @@ include($_SERVER['PATH_BASE'] . '/core/helpers/html/Link.php');
 
         foreach ($fila as $key => $value) {
             if(!in_array($key, $no_mostrar))
-                echo "  <td>$value</td>";
+                echo "  <td id='$key'>$value</td>";
         }
         $imagen = array('nombre'=>'botones/edit.png', 'attr' => array('alt'=>'editar','style'=>'width:30px;'));
         echo '  <td>'.Link::html2("./?c=ubicacion&a=modificacion&id={$fila['id']}",'editar',null,$imagen).'</td>';
@@ -36,25 +39,3 @@ include($_SERVER['PATH_BASE'] . '/core/helpers/html/Link.php');
 <article id="botonera">
             <a href="./?c=ubicacion&a=alta"><p>NUEVO<img src="./img/botones/agregar.png"></p></a>
         </article>
-<style type="text/css">
-    table{
-        border-collapse: collapse;
-        margin: auto;
-        margin-top: 10px;
-        width: 90%;
-    }
-    table td{
-        border: 1px solid black;
-    }
-    table th{
-        border: 1px solid black;
-    }
-
-    table img{
-        width: 40px;        
-    }
-    #botonera p{
-        color:black;
-        font-weight: bold;
-    }
-</style>

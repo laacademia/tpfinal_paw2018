@@ -17,7 +17,7 @@ class NoticiaController extends  \core\Controller
 			$categoria->load($value['id_categoria']);
 			$listado[$key]['categoria'] = $categoria->descripcion;
 		}
-		return $this->render('inicio', array('title'=>'Listado de Noticias','listado' => $listado, 'categorias'=>$categorias));	//llama a la view inicio
+		return $this->render('inicio', array('title'=>'Listado de Noticias','listado' => $listado, 'categorias'=>$categoria));	//llama a la view inicio
 	}
 	function actionAlta(){
 		$categoria = $this->getModel('Categoria');

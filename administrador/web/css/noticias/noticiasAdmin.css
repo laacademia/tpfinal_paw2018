@@ -1,0 +1,32 @@
+@media screen{
+    table{
+		border-collapse: collapse;
+		margin: auto;
+		margin-top: 10px;
+		width: 90%;
+	}
+	table td{
+		border: 1px solid black;
+	}
+	table th{
+		border: 1px solid black;
+	}
+
+	table img{
+		width: 40px;		
+	}
+	#botonera p{
+		color:black;
+		font-weight: bold;
+	}
+
+    #id{
+            display: none;
+        }
+}
+
+@media screen and (max-width: 600px) {
+   #fecha, #descripcion{
+        display: none;
+    }
+} 
