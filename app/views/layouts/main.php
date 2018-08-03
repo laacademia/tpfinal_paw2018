@@ -19,6 +19,9 @@
 <body>
 	<header class="bar-container">
 		<span class="button-main-menu">||||</span>
+        <div class="logo-container">
+            <!--<a class="logo" href="./?c=home&a=inicio">DanzArte</a>-->
+        </div>
 		<nav id="main-menu">			
 			<ul>
 				<?php include('menu.php'); ?>

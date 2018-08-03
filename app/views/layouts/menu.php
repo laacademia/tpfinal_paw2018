@@ -6,6 +6,7 @@
 <li class="boton_menu" controlador="ubicacion" accion="inicio" titulo="Nuestra Ubicacion">Nuestra Ubicacion</li>
 <li class="boton_menu" controlador="mensaje" accion="inicio" titulo="Contacto">Contacto</li>
 
+
 <style type="text/css">
 	.boton_menu{
 		cursor: pointer;
