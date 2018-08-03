@@ -271,6 +271,13 @@
     .color3{
         background: black;
     }
+    #img-barra{
+        width:11em;
+        height:4em;
+        top:auto;
+        margin: 0em 0em;
+        
+    }
 }
 
 
@@ -364,6 +371,13 @@
             float: right;
             display: block;
             margin-right: auto;
+        }
+        #img-barra{
+            width:11em;
+            height:4em;
+            top:auto;
+            margin: 2em 0em;
+        
         }
 }
 
