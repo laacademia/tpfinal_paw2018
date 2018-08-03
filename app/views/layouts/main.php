@@ -20,7 +20,7 @@
 	<header class="bar-container">
 		<span class="button-main-menu">||||</span>
         <div class="logo-container">
-            <!--<a class="logo" href="./?c=home&a=inicio">DanzArte</a>-->
+            <img id="img-barra" src= "./img/logo/logo1.png" alt="logo">
         </div>
 		<nav id="main-menu">			
 			<ul>
